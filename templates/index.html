@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="static\style.css">
+  
+</head>
+
+<body>
+
+<form method="get" action="https://estimator-visualization.herokuapp.com/">
+ <button type="submit" class="btn btn-primary btn-block-small btn-large">Visualizations</button>
+</form>
+<form method="get" action="/">
+ <button type="submit" class="btn btn-primary btn-block-small btn-large">Logout</button>
+ </form>
+ 
+ <div class="login">
+	
+	<h1>Tacoma Value Estimator</h1>
+
+    <form action="/estimate" method="post">
+    	<input type="text" name="year" placeholder="Year" required="required" />
+        <input type="text" name="odometer" placeholder="Odometer" required="required" />
+		<select class="options" name="title_status" placeholder="Title status" required="required">
+			<option>clean</option>
+			<option>lien</option>
+			<option>rebuilt</option>
+			<option>salvage</option>
+		</select>
+		<select class="options" name="transmission" placeholder="Transmission" required="required">
+			<option>automatic</option>
+			<option>manual</option>
+			<option>other</option>
+		</select>
+		<select class="options" name="drive" placeholder="Drive" required="required">
+			<option>4wd</option>
+			<option>fwd</option>
+			<option>rwd</option>
+		</select>
+		<select class="options" name="state" placeholder="State" required="required">
+			<option>AK</option><option>AL</option><option>AR</option><option>AZ</option><option>CA</option><option>CO</option><option>CT</option><option>DC</option><option>DE</option><option>FL</option>
+			<option>GA</option><option>HI</option><option>IA</option><option>ID</option><option>IL</option><option>IN</option><option>KS</option><option>KY</option><option>LA</option><option>MA</option>
+			<option>MD</option><option>ME</option><option>MI</option><option>MN</option><option>MO</option><option>MS</option><option>MT</option><option>NC</option><option>ND</option><option>NH</option>
+			<option>NJ</option><option>NM</option><option>NV</option><option>NY</option><option>OH</option><option>OK</option><option>OR</option><option>PA</option><option>RI</option><option>SC</option>
+			<option>SD</option><option>TN</option><option>TX</option><option>UT</option><option>VA</option><option>VT</option><option>WA</option><option>WI</option><option>WV</option><option>WY</option>
+		</select>
+		
+<!-- 		<input type="text" name="title_status" placeholder="Title" required="required" />
+		<input type="text" name="transmission" placeholder="Transmission" required="required" />
+		<input type="text" name="drive" placeholder="Drive" required="required" />
+		<input type="text" name="state" placeholder="State" required="required" /> -->
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Estimate</button>
+    </form>
+
+   <br>
+   <br>
+   {{prediction_text}}
+
+ </div>
+
+
+</body>
+</html>
